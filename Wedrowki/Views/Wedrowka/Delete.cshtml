@@ -1,0 +1,134 @@
+﻿@model Wedrowki.Models.WedrowkaModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Jesteś pewny że chcesz usunąć poniższy wpis?</h3>
+<div>
+    <hr class="my-5">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nazwa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiejsceStartu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiejsceStartu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiejsceDocelowe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiejsceDocelowe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LiczbaKm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LiczbaKm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataStartu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataStartu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataKonca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataKonca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdj1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zdj1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdj2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zdj2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdj3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zdj3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdj4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zdj4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdj5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zdj5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zdj6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zdj6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Film1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Film1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-outline-danger btn-lg" />
+            @Html.ActionLink("Powrót do listy", "Index", "", new { @class = "btn btn-outline-light btn-lg" })
+        </div>
+    }
+</div>

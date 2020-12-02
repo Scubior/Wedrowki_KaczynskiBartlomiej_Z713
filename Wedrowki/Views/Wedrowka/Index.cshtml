@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Wedrowki.Models.WedrowkaModel>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nazwa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataStartu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataKonca)
+        </th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nazwa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataStartu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataKonca)
+            </td>
+            <td>
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.IdWedrowki }, new { @class = "btn btn-outline-info" })
+            </td>
+            <td>
+                @Html.ActionLink("Edytuj", "Edit", new { id = item.IdWedrowki }, new { @class = "btn btn-outline-warning" })
+            </td>
+            <td>
+                @Html.ActionLink("Usuń", "Delete", new { id = item.IdWedrowki }, new { @class = "btn btn-outline-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+
+

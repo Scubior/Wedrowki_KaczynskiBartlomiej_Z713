@@ -1,0 +1,87 @@
+﻿@model Wedrowki.Models.WedrowkaModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h4>Szczegóły wędrówki</h4>
+<br />
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <strong>@Html.DisplayNameFor(model => model.Nazwa)</strong>
+                @Html.DisplayFor(model => model.Nazwa)<br />
+                <strong>@Html.DisplayNameFor(model => model.Opis)</strong>
+                @Html.DisplayFor(model => model.Opis)<br />
+                <strong>@Html.DisplayNameFor(model => model.MiejsceStartu)</strong>
+                @Html.DisplayFor(model => model.MiejsceStartu)<br />
+                <strong>@Html.DisplayNameFor(model => model.MiejsceDocelowe)</strong>
+                @Html.DisplayFor(model => model.MiejsceDocelowe)<br />
+                <strong>@Html.DisplayNameFor(model => model.LiczbaKm)</strong>
+                @Html.DisplayFor(model => model.LiczbaKm)<br />
+                <strong>@Html.DisplayNameFor(model => model.DataStartu)</strong>
+                @Html.DisplayFor(model => model.DataStartu)<br />
+                <strong>@Html.DisplayNameFor(model => model.DataKonca)</strong>
+                @Html.DisplayFor(model => model.DataKonca)<br />
+            </div>
+            <div class="col-md-6">
+                <p><strong>Zdjęcia</strong></p>
+                <br />
+                <row>
+                    @if (Model.Zdj1 != null)
+                    {
+                        <img src="@Url.Content(@Html.DisplayFor(model => model.Zdj1).ToString())" width="100" height="100" />
+                    }
+                    @if (Model.Zdj2 != null)
+                    {
+                        <img src="@Url.Content(@Html.DisplayFor(model => model.Zdj2).ToString())" width="100" height="100" />
+                    }
+                    @if (Model.Zdj3 != null)
+                    {
+                        <img src="@Url.Content(@Html.DisplayFor(model => model.Zdj3).ToString())" width="100" height="100" />
+                    }
+                    @if (Model.Zdj4 != null)
+                    {
+                        <img src="@Url.Content(@Html.DisplayFor(model => model.Zdj4).ToString())" width="100" height="100" />
+                    }
+                    @if (Model.Zdj5 != null)
+                    {
+                        <img src="@Url.Content(@Html.DisplayFor(model => model.Zdj5).ToString())" width="100" height="100" />
+                    }
+                    @if (Model.Zdj6 != null)
+                    {
+                        <img src="@Url.Content(@Html.DisplayFor(model => model.Zdj6).ToString())" width="100" height="100" />
+                    }
+                    @if(Model.Zdj1 == null && Model.Zdj2 == null && Model.Zdj3 == null && Model.Zdj4 == null && Model.Zdj5 == null && Model.Zdj6 == null)
+                    {
+                        <p>brak zdjęć</p>
+                    }
+                </row><br />
+                <row>
+                    <p><strong>Filmy</strong></p>
+                    <br />
+                    @if (Model.Film1 != null)
+                    {
+                        <video width="150" height="150" controls>
+                            <source src="@Url.Content(@Html.DisplayFor(model => model.Film1).ToString())" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    }
+                    @if (Model.Film1 == null){ 
+                    
+                    <p>brak filmów</p>
+                    }
+                </row>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<p>
+    @Html.ActionLink("Edytuj", "Edit", new { id = Model.IdWedrowki }, new { @class = "btn btn-outline-warning btn-lg" })
+    @Html.ActionLink("Powrót do listy", "Index", "", new { @class = "btn btn-outline-light btn-lg" })
+</p>
