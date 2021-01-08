@@ -13,17 +13,10 @@
     <div class="container">
         <div class="jumbotron bg-dark text-white custom-shadow">
             <h1 class="display-4">Piesze Wędrówki</h1>
-            <div class="row">
-                <div class="col-md-9">
-                    <p class="lead">
-                        Przeżyj, zapisz, zapamiętaj!
-                    </p>
-                </div>
-                <div class="col-3">
-                    @Html.ActionLink("Dodaj wędrówke", "Create", "Wedrowka", new { @class = "btn btn-outline-success btn-lg" })
-                </div>
-            </div>
-            <hr class="my-5">
+                <p class="lead">
+                    Przeżyj, zapisz, zapamiętaj!
+                </p>
+            <hr class="my-3">
             <div class="container body-content">
                 @RenderBody()
                 <hr />

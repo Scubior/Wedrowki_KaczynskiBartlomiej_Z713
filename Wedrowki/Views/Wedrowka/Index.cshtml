@@ -3,6 +3,12 @@
 @{
     ViewBag.Title = "Home";
 }
+<div class="row">
+        <div class="col-3 offset-9">
+            @Html.ActionLink("Dodaj wędrówke", "Create", "Wedrowka", new { @class = "btn btn-outline-success btn-lg" })
+        </div>
+</div>
+<br/>
 
 <table class="table">
     <tr>

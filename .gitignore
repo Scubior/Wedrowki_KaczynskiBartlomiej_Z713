@@ -259,3 +259,6 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/Wedrowki/Images/5_z.png
+/Wedrowki/Images/5_z2.png
+/Wedrowki/Images/5_z3.png
